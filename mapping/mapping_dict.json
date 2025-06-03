@@ -1,0 +1,56 @@
+{
+  "Normal": [],
+  "ddos_http": [
+    {"tactica": "Inhibit Response Function", "idTecnica": "T0814", "nombreTecnica": "Denial of Service"},
+    {"tactica": "Impact", "idTecnica": "T0815", "nombreTecnica": "Denial of Control"},
+    {"tactica": "Impact", "idTecnica": "T0816", "nombreTecnica": "Denial of View"}
+  ],
+  "ddos_icmp": [
+    {"tactica": "Inhibit Response Function", "idTecnica": "T0814", "nombreTecnica": "Denial of Service"},
+    {"tactica": "Impact", "idTecnica": "T0815", "nombreTecnica": "Denial of Control"},
+    {"tactica": "Impact", "idTecnica": "T0816", "nombreTecnica": "Denial of View"}
+  ],
+  "ddos_tcp_syn": [
+    {"tactica": "Inhibit Response Function", "idTecnica": "T0814", "nombreTecnica": "Denial of Service"},
+    {"tactica": "Impact", "idTecnica": "T0815", "nombreTecnica": "Denial of Control"},
+    {"tactica": "Impact", "idTecnica": "T0816", "nombreTecnica": "Denial of View"}
+  ],
+  "ddos_udp": [
+    {"tactica": "Inhibit Response Function", "idTecnica": "T0814", "nombreTecnica": "Denial of Service"},
+    {"tactica": "Impact", "idTecnica": "T0815", "nombreTecnica": "Denial of Control"},
+    {"tactica": "Impact", "idTecnica": "T0816", "nombreTecnica": "Denial of View"}
+  ],
+  "port_scan": [
+    {"tactica": "Discovery", "idTecnica": "T0846", "nombreTecnica": "Remote System Discovery"}
+  ],
+  "vuln_scan": [
+    {"tactica": "Discovery", "idTecnica": "T0846", "nombreTecnica": "Remote System Discovery"}
+  ],
+  "os_fingerprint": [
+    {"tactica": "Discovery", "idTecnica": "T0848", "nombreTecnica": "Rogue Master"}
+  ],
+  "mitm_arp_dns": [
+    {"tactica": "Collection", "idTecnica": "T0830", "nombreTecnica": "Adversary-in-the-Middle"}
+  ],
+  "sql_injection": [
+    {"tactica": "Execution", "idTecnica": "T0807", "nombreTecnica": "Command-Line Interface"}
+  ],
+  "xss": [
+    {"tactica": "Initial Access", "idTecnica": "T0819", "nombreTecnica": "Exploit Public-Facing Application"}
+  ],
+  "upload": [
+    {"tactica": "Collection", "idTecnica": "T0845", "nombreTecnica": "Program Upload"}
+  ],
+  "password": [
+    {"tactica": "Persistence", "idTecnica": "T0859", "nombreTecnica": "Valid Accounts"},
+    {"tactica": "Lateral Movement", "idTecnica": "T0812", "nombreTecnica": "Default Credentials"}
+  ],
+  "backdoor": [
+    {"tactica": "Execution", "idTecnica": "T0821", "nombreTecnica": "Modify Controller Tasking"}
+  ],
+  "ransomware": [
+    {"tactica": "Inhibit Response Function", "idTecnica": "T0809", "nombreTecnica": "Data Destruction"},
+    {"tactica": "Impact", "idTecnica": "T0826", "nombreTecnica": "Loss of Availability"},
+    {"tactica": "Impact", "idTecnica": "T0828", "nombreTecnica": "Loss of Productivity and Revenue"}
+  ]
+}

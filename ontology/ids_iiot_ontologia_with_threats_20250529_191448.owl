@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ids="http://universidad.es/tfm/ids-iiot/ontologia#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0830">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0830</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adversary-in-the-Middle</ids:tieneNombre>
+    <rdfs:label>T0830</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Collection"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0947"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0802"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0942"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0931"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0930"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0810"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0813"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0814"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0948">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0948</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application Isolation and Sandboxing</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El aislamiento de aplicaciones limita los demás procesos y funciones del sistema a los que puede acceder un objetivo comprometido.</ids:tieneDescripcion>
+    <rdfs:label>M0948</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0845">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0845</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Program Upload</ids:tieneNombre>
+    <rdfs:label>T0845</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Collection"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0801"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0800"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0802"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0937"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0804"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0807"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0930"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0813"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0815">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0815</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denial of Control</ids:tieneNombre>
+    <rdfs:label>T0815</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Impact"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0953"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0810"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0811"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0942">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0942</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disable or Remove Feature or Program</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deshabilite protocolos de red heredados innecesarios que pudieran ser empleados para ataques Adversary-in-the-Middle, si corresponde.</ids:tieneDescripcion>
+    <rdfs:label>M0942</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0807">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0807</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network Allowlists</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utilice listas de control de acceso (allowlists) en los hosts para impedir que los dispositivos acepten conexiones de sistemas no autorizados.</ids:tieneDescripcion>
+    <rdfs:label>M0807</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0953">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0953</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Backup</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realice y almacene copias de seguridad de los datos de los sistemas de usuarios finales y de los servidores críticos. Asegúrese de que los sistemas de respaldo y almacenamiento estén reforzados y mantenidos separados de la red corporativa para prevenir compromisos. Mantenga y ejercite los planes de respuesta a incidentes, incluyendo la gestión de imágenes de respaldo maestras ("gold-copy") y configuraciones de sistemas clave para permitir una recuperación y respuesta rápidas ante actividades adversarias que afecten el control, la visibilidad o la disponibilidad.</ids:tieneDescripcion>
+    <rdfs:label>M0953</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0951">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0951</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Update Software</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analice regularmente los sistemas expuestos a Internet en busca de vulnerabilidades y aplique parches rápidamente cuando se descubran vulnerabilidades críticas.</ids:tieneDescripcion>
+    <rdfs:label>M0951</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada_6276">
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:label>Amenaza_6276</rdfs:label>
+    <ids:tieneConfianza rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9962176497347229</ids:tieneConfianza>
+    <ids:detectadaEn>2025-05-29T19:14:48Z</ids:detectadaEn>
+    <ids:indiceMuestra rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6276</ids:indiceMuestra>
+    <ids:esAtaque rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#ddos_tcp_syn"/>
+    <ids:utilizaTecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0814"/>
+    <ids:utilizaTecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0815"/>
+    <ids:utilizaTecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0816"/>
+    <ids:utilizaTactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Inhibit_Response_Function"/>
+    <ids:utilizaTactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Impact"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0815"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0953"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0810"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0811"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Inhibit_Response_Function">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inhibit Response Function</ids:tieneNombre>
+    <rdfs:label>Inhibit_Response_Function</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0816">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0816</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denial of View</ids:tieneNombre>
+    <rdfs:label>T0816</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Impact"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0953"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0810"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0811"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#indiceMuestra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>indiceMuestra</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment>Índice de la muestra del dataset que generó la detección</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#implementa_tecnica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>implementa_tecnica</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <rdfs:comment>Tipo de ataque implementa técnica(s) MITRE específica(s)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0815">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0815</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Watchdog Timers</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se deben reiniciar el sistema y los procesos cuando ocurra una condición de tiempo de espera.</ids:tieneDescripcion>
+    <rdfs:label>M0815</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Discovery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discovery</ids:tieneNombre>
+    <rdfs:label>Discovery</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0821">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0821</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modify Controller Tasking</ids:tieneNombre>
+    <rdfs:label>T0821</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Execution"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0947"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0800"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0945"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0804"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0811">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0811</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Redundancy of Service</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sistemas en espera (hot-standbys) en ubicaciones diversas pueden asegurar la continuidad de las operaciones si el sistema principal está comprometido o no disponible. En la capa de red, protocolos como Parallel Redundancy Protocol pueden usarse para utilizar simultáneamente comunicaciones redundantes y diversas en una red local.</ids:tieneDescripcion>
+    <rdfs:label>M0811</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Impact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Impact</ids:tieneNombre>
+    <rdfs:label>Impact</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Execution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execution</ids:tieneNombre>
+    <rdfs:label>Execution</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#detectadaEn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>detectadaEn</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment>Momento en que se realizó la detección</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#ddos_http">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_http</ids:tieneNombre>
+    <rdfs:label>ddos_http</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0814"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0815"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0816"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#ddos_icmp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_icmp</ids:tieneNombre>
+    <rdfs:label>ddos_icmp</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0814"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0815"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0816"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0810">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0810</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Out-of-Band Communications Channel</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proporcione a los operadores comunicaciones redundantes fuera de banda para respaldar la supervisión y el control de los procesos operativos, especialmente al recuperarse de una interrupción de la red. Las comunicaciones fuera de banda deben usar sistemas y tecnologías diversas para minimizar modos comunes de falla y vulnerabilidades en la infraestructura de comunicaciones.</ids:tieneDescripcion>
+    <rdfs:label>M0810</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0947">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0947</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audit</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Limite el acceso a la infraestructura de red y a los recursos que puedan ser utilizados para reconfigurar el tráfico o generar condiciones de Adversary-in-the-Middle.</ids:tieneDescripcion>
+    <rdfs:label>M0947</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0930">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0930</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network Segmentation</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Segmente los activos operativos y sus dispositivos de gestión según su rol funcional dentro del proceso para lograr un aislamiento más estricto de los sistemas de control y de la información operativa crítica.</ids:tieneDescripcion>
+    <rdfs:label>M0930</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0926">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0926</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Privileged Account Management</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aplique el principio de privilegio mínimo a las cuentas de servicio.</ids:tieneDescripcion>
+    <rdfs:label>M0926</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0950">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0950</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploit Protection</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se pueden usar cortafuegos de aplicaciones web para limitar la exposición de las aplicaciones y prevenir que el tráfico malicioso de explotación alcance la aplicación objetivo.</ids:tieneDescripcion>
+    <rdfs:label>M0950</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0814">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0814</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denial of Service</ids:tieneNombre>
+    <rdfs:label>T0814</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Inhibit_Response_Function"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0815"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0809">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0809</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Destruction</ids:tieneNombre>
+    <rdfs:label>T0809</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Inhibit_Response_Function"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0953"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0926"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0922"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#ddos_tcp_syn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_tcp_syn</ids:tieneNombre>
+    <rdfs:label>ddos_tcp_syn</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0814"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0815"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0816"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0807">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0807</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Command-Line Interface</ids:tieneNombre>
+    <rdfs:label>T0807</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Execution"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0942"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0938"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#upload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upload</ids:tieneNombre>
+    <rdfs:label>upload</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0845"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0802">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0802</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communication Authenticity</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los protocolos usados para funciones de control deben proporcionar mecanismos de autenticidad (p. ej., mediante códigos MAC o firmas digitales). De lo contrario, utilice dispositivos intermedios o VPNs para reforzar la autenticidad de la comunicación entre dispositivos que no soportan dicha capacidad.</ids:tieneDescripcion>
+    <rdfs:label>M0802</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0826">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0826</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss of Availability</ids:tieneNombre>
+    <rdfs:label>T0826</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Impact"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0953"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0810"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0811"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#os_fingerprint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">os_fingerprint</ids:tieneNombre>
+    <rdfs:label>os_fingerprint</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0848"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#password">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">password</ids:tieneNombre>
+    <rdfs:label>password</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0859"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0812"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0828">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0828</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss of Productivity and Revenue</ids:tieneNombre>
+    <rdfs:label>T0828</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Impact"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0953"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Lateral_Movement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lateral Movement</ids:tieneNombre>
+    <rdfs:label>Lateral_Movement</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#utilizaTecnica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>utilizaTecnica</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <rdfs:comment>Amenaza detectada utiliza técnica(s) específica(s) MITRE</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0938">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0938</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execution Prevention</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La prevención de ejecución puede impedir que software malicioso acceda a recursos protegidos a través de la interfaz de línea de comandos.</ids:tieneDescripcion>
+    <rdfs:label>M0938</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#sql_injection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sql_injection</ids:tieneNombre>
+    <rdfs:label>sql_injection</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0807"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Tecnica</rdfs:label>
+    <rdfs:comment>Técnica de ataque según MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0800">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0800</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Authorization Enforcement</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Todos los controladores de campo deben restringir la carga de programas solo a ciertos usuarios mediante control de acceso basado en roles.</ids:tieneDescripcion>
+    <rdfs:label>M0800</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#tieneConfianza">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>tieneConfianza</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment>Nivel de confianza de la detección (0.0 - 1.0)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0936">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0936</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Account Use Policies</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configure funciones de uso de cuentas, como bloqueo tras intentos fallidos, horarios de acceso y requisitos de contraseñas.</ids:tieneDescripcion>
+    <rdfs:label>M0936</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada_5984">
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:label>Amenaza_5984</rdfs:label>
+    <ids:tieneConfianza rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9764258848984498</ids:tieneConfianza>
+    <ids:detectadaEn>2025-05-29T19:14:48Z</ids:detectadaEn>
+    <ids:indiceMuestra rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5984</ids:indiceMuestra>
+    <ids:esAtaque rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#password"/>
+    <ids:utilizaTecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0859"/>
+    <ids:utilizaTecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0812"/>
+    <ids:utilizaTactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Persistence"/>
+    <ids:utilizaTactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Lateral_Movement"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0801"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0936"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0915"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0913"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0947"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0937"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0932"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0927"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0926"/>
+    <ids:mitigacion_recomendada rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0918"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0848">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0848</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rogue Master</ids:tieneNombre>
+    <rdfs:label>T0848</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Discovery"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0802"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0937"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0807"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0930"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0813"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#ransomware">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ransomware</ids:tieneNombre>
+    <rdfs:label>ransomware</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0809"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0826"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0828"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Initial_Access">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initial Access</ids:tieneNombre>
+    <rdfs:label>Initial_Access</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0931">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0931</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network Intrusion Prevention</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los sistemas de detección/prevención de intrusiones de red capaces de identificar patrones de tráfico indicativos de actividad Adversary-in-the-Middle pueden emplearse para mitigar dicha actividad.</ids:tieneDescripcion>
+    <rdfs:label>M0931</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#ddos_udp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_udp</ids:tieneNombre>
+    <rdfs:label>ddos_udp</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0814"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0815"/>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0816"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0945">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0945</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Code Signing</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utilice firmas de código para verificar la integridad y autenticidad de los programas instalados.</ids:tieneDescripcion>
+    <rdfs:label>M0945</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0932">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0932</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multi-factor Authentication</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Integre MFA para reducir el riesgo de uso de credenciales válidas robadas.</ids:tieneDescripcion>
+    <rdfs:label>M0932</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0846">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0846</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Remote System Discovery</ids:tieneNombre>
+    <rdfs:label>T0846</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Discovery"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0814"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#utilizaTactica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>utilizaTactica</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <rdfs:comment>Amenaza detectada utiliza táctica(s) específica(s) MITRE</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0819">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0819</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploit Public-Facing Application</ids:tieneNombre>
+    <rdfs:label>T0819</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Initial_Access"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0948"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0950"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0930"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0926"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0951"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0916"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#pertenece_a_tactica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>pertenece_a_tactica</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <rdfs:comment>Técnica pertenece a una táctica específica</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#xss">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xss</ids:tieneNombre>
+    <rdfs:label>xss</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0819"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AmenazaDetectada</rdfs:label>
+    <rdfs:comment>Instancia específica de amenaza detectada por el sistema IDS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#tieneID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>tieneID</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Identificador único del elemento</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0859">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0859</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Valid Accounts</ids:tieneNombre>
+    <rdfs:label>T0859</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Persistence"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0801"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0936"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0915"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0913"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0947"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0937"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0932"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0927"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0926"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0918"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0918">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0918</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User Account Management</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asegure que usuarios y grupos tengan permisos adecuados según su rol mediante controles IAM.</ids:tieneDescripcion>
+    <rdfs:label>M0918</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#mitigada_por">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>mitigada_por</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <rdfs:comment>Técnica de ataque se mitiga con estrategia específica</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#port_scan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">port_scan</ids:tieneNombre>
+    <rdfs:label>port_scan</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0846"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0801">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0801</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Access Management</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autentique todos los accesos a controladores de campo antes de autorizar cambios.</ids:tieneDescripcion>
+    <rdfs:label>M0801</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0916">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0916</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vulnerability Scanning</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realice exploraciones periódicas de vulnerabilidades en los sistemas expuestos y establezca procedimientos para parchearlos rápidamente.</ids:tieneDescripcion>
+    <rdfs:label>M0916</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Persistence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Persistence</ids:tieneNombre>
+    <rdfs:label>Persistence</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Mitigacion</rdfs:label>
+    <rdfs:comment>Medida de mitigación según MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0922">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0922</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restrict File and Directory Permissions</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proteja los archivos locales con permisos adecuados para reducir oportunidades de destrucción de datos.</ids:tieneDescripcion>
+    <rdfs:label>M0922</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0927">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0927</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Password Policies</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las credenciales por defecto deben cambiarse inmediatamente tras la instalación y antes del despliegue en producción.</ids:tieneDescripcion>
+    <rdfs:label>M0927</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0937">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0937</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Filter Network Traffic</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Implemente filtrado mediante listas de autorización en línea para los comandos de los protocolos de automatización, con el fin de evitar que los dispositivos envíen mensajes de comando o de reporte no autorizados.</ids:tieneDescripcion>
+    <rdfs:label>M0937</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Tactica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Tactica</rdfs:label>
+    <rdfs:comment>Táctica de ataque según MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#esAtaque">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>esAtaque</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <rdfs:comment>Amenaza detectada es de un tipo específico de ataque</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0804">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0804</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human User Authentication</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Todos los controladores de campo deben requerir autenticación de usuarios en cualquier sesión de administración.</ids:tieneDescripcion>
+    <rdfs:label>M0804</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#mitm_arp_dns">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitm_arp_dns</ids:tieneNombre>
+    <rdfs:label>mitm_arp_dns</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0830"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Collection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tactica"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection</ids:tieneNombre>
+    <rdfs:label>Collection</rdfs:label>
+    <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#mitigacion_recomendada">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>mitigacion_recomendada</rdfs:label>
+    <rdfs:domain rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#AmenazaDetectada"/>
+    <rdfs:range rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <rdfs:comment>Mitigación recomendada para la amenaza detectada</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0814">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0814</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Static Network Configuration</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las redes ICS típicamente tienen dispositivos definidos de forma estática; por lo tanto, se debe minimizar el uso de protocolos de descubrimiento de TI (por ejemplo, DHCP, LLDP) y de funciones de descubrimiento en protocolos de automatización como OPC UA Device Discovery, BACnet y Ethernet/IP.</ids:tieneDescripcion>
+    <rdfs:label>M0814</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#Ataque">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ataque</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML (ddos_http, sql_injection, etc.)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#vuln_scan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vuln_scan</ids:tieneNombre>
+    <rdfs:label>vuln_scan</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0846"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#T0812">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Tecnica"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0812</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Default Credentials</ids:tieneNombre>
+    <rdfs:label>T0812</rdfs:label>
+    <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    <ids:pertenece_a_tactica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Lateral_Movement"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0801"/>
+    <ids:mitigada_por rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#M0927"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0813">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0813</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Software Process and Device Authentication</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los dispositivos deben autenticar todos los mensajes entre el equipo maestro y los dispositivos remotos (outstations).</ids:tieneDescripcion>
+    <rdfs:label>M0813</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0913">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0913</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application Developer Guidance</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asegúrese de que las aplicaciones y dispositivos no almacenen credenciales de forma insegura.</ids:tieneDescripcion>
+    <rdfs:label>M0913</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#backdoor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Ataque"/>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">backdoor</ids:tieneNombre>
+    <rdfs:label>backdoor</rdfs:label>
+    <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    <ids:implementa_tecnica rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#T0821"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Ontología IDS para IIoT</rdfs:label>
+    <rdfs:comment>Sistema de Detección de Intrusiones para Industrial IoT basado en MITRE ATT&amp;CK</rdfs:comment>
+    <owl:versionInfo>3.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#tieneDescripcion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>tieneDescripcion</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Descripción detallada del elemento</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#M0915">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://universidad.es/tfm/ids-iiot/ontologia#Mitigacion"/>
+    <ids:tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0915</ids:tieneID>
+    <ids:tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active Directory Configuration</ids:tieneNombre>
+    <ids:tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Considere la configuración de un servicio de autenticación a nivel de red disponible en los dispositivos ICS.</ids:tieneDescripcion>
+    <rdfs:label>M0915</rdfs:label>
+    <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://universidad.es/tfm/ids-iiot/ontologia#tieneNombre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>tieneNombre</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Nombre descriptivo del elemento</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,377 @@
+{
+  "T0814": {
+    "technique_name": "Denial of Service",
+    "mitigations": [
+      {
+        "id": "M0815",
+        "name": "Watchdog Timers",
+        "description": "Se deben reiniciar el sistema y los procesos cuando ocurra una condición de tiempo de espera."
+      }
+    ]
+  },
+  "T0815": {
+    "technique_name": "Denial of Control",
+    "mitigations": [
+      {
+        "id": "M0953",
+        "name": "Data Backup",
+        "description": "Realice y almacene copias de seguridad de los datos de los sistemas de usuarios finales y de los servidores críticos. Asegúrese de que los sistemas de respaldo y almacenamiento estén reforzados y mantenidos separados de la red corporativa para prevenir compromisos. Mantenga y ejercite los planes de respuesta a incidentes, incluyendo la gestión de imágenes de respaldo maestras (\"gold-copy\") y configuraciones de sistemas clave para permitir una recuperación y respuesta rápidas ante actividades adversarias que afecten el control, la visibilidad o la disponibilidad."
+      },
+      {
+        "id": "M0810",
+        "name": "Out-of-Band Communications Channel",
+        "description": "Proporcione a los operadores comunicaciones redundantes fuera de banda para respaldar la supervisión y el control de los procesos operativos, especialmente al recuperarse de una interrupción de la red. Las comunicaciones fuera de banda deben usar sistemas y tecnologías diversas para minimizar modos comunes de falla y vulnerabilidades en la infraestructura de comunicaciones."
+      },
+      {
+        "id": "M0811",
+        "name": "Redundancy of Service",
+        "description": "Sistemas en espera (hot-standbys) en ubicaciones diversas pueden asegurar la continuidad de las operaciones si el sistema principal está comprometido o no disponible. En la capa de red, protocolos como Parallel Redundancy Protocol pueden usarse para utilizar simultáneamente comunicaciones redundantes y diversas en una red local."
+      }
+    ]
+  },
+  "T0816": {
+    "technique_name": "Denial of View",
+    "mitigations": [
+      {
+        "id": "M0953",
+        "name": "Data Backup",
+        "description": "Realice y almacene copias de seguridad de los datos de los sistemas de usuarios finales y de los servidores críticos. Asegúrese de que los sistemas de respaldo y almacenamiento estén reforzados y separados de la red corporativa para evitar compromisos. Mantenga y ejercite los planes de respuesta a incidentes, incluyendo la gestión de imágenes de respaldo maestras (\"gold-copy\") y configuraciones de sistemas clave para posibilitar una recuperación y respuesta rápidas."
+      },
+      {
+        "id": "M0810",
+        "name": "Out-of-Band Communications Channel",
+        "description": "Proporcione a los operadores comunicaciones redundantes fuera de banda para apoyar la monitorización y el control de los procesos operativos, especialmente al recuperarse de una caída de la red. Las comunicaciones fuera de banda deben utilizar sistemas y tecnologías diversas para minimizar modos de falla comunes y vulnerabilidades."
+      },
+      {
+        "id": "M0811",
+        "name": "Redundancy of Service",
+        "description": "Sistemas de reserva en caliente (hot-standbys) ubicados en lugares diversos pueden asegurar la continuidad de las operaciones si el sistema principal se ve comprometido o no está disponible."
+      }
+    ]
+  },
+  "T0846": {
+    "technique_name": "Remote System Discovery",
+    "mitigations": [
+      {
+        "id": "M0814",
+        "name": "Static Network Configuration",
+        "description": "Las redes ICS típicamente tienen dispositivos definidos de forma estática; por lo tanto, se debe minimizar el uso de protocolos de descubrimiento de TI (por ejemplo, DHCP, LLDP) y de funciones de descubrimiento en protocolos de automatización como OPC UA Device Discovery, BACnet y Ethernet/IP."
+      }
+    ]
+  },
+  "T0848": {
+    "technique_name": "Rogue Master",
+    "mitigations": [
+      {
+        "id": "M0802",
+        "name": "Communication Authenticity",
+        "description": "Los protocolos usados para funciones de control deben proporcionar mecanismos de autenticidad (p. ej., mediante códigos MAC o firmas digitales). De lo contrario, utilice dispositivos intermedios o VPNs para reforzar la autenticidad de la comunicación entre dispositivos que no soportan dicha capacidad."
+      },
+      {
+        "id": "M0937",
+        "name": "Filter Network Traffic",
+        "description": "Implemente filtrado mediante listas de autorización en línea para los comandos de los protocolos de automatización, con el fin de evitar que los dispositivos envíen mensajes de comando o de reporte no autorizados."
+      },
+      {
+        "id": "M0807",
+        "name": "Network Allowlists",
+        "description": "Utilice listas de control de acceso (allowlists) en los hosts para impedir que los dispositivos acepten conexiones de sistemas no autorizados."
+      },
+      {
+        "id": "M0930",
+        "name": "Network Segmentation",
+        "description": "Segmente los activos operativos y sus dispositivos de gestión según su rol funcional dentro del proceso para lograr un aislamiento más estricto de los sistemas de control y de la información operativa crítica."
+      },
+      {
+        "id": "M0813",
+        "name": "Software Process and Device Authentication",
+        "description": "Los dispositivos deben autenticar todos los mensajes entre el equipo maestro y los dispositivos remotos (outstations)."
+      }
+    ]
+  },
+  "T0830": {
+    "technique_name": "Adversary-in-the-Middle",
+    "mitigations": [
+      {
+        "id": "M0947",
+        "name": "Audit",
+        "description": "Limite el acceso a la infraestructura de red y a los recursos que puedan ser utilizados para reconfigurar el tráfico o generar condiciones de Adversary-in-the-Middle."
+      },
+      {
+        "id": "M0802",
+        "name": "Communication Authenticity",
+        "description": "Asegurar la autenticidad de las comunicaciones permite detectar cualquier mensaje manipulado mediante Adversary-in-the-Middle."
+      },
+      {
+        "id": "M0942",
+        "name": "Disable or Remove Feature or Program",
+        "description": "Deshabilite protocolos de red heredados innecesarios que pudieran ser empleados para ataques Adversary-in-the-Middle, si corresponde."
+      },
+      {
+        "id": "M0931",
+        "name": "Network Intrusion Prevention",
+        "description": "Los sistemas de detección/prevención de intrusiones de red capaces de identificar patrones de tráfico indicativos de actividad Adversary-in-the-Middle pueden emplearse para mitigar dicha actividad."
+      },
+      {
+        "id": "M0930",
+        "name": "Network Segmentation",
+        "description": "La segmentación de la red puede aislar componentes que no requieren acceso amplio, mitigando el alcance de un ataque Adversary-in-the-Middle."
+      },
+      {
+        "id": "M0810",
+        "name": "Out-of-Band Communications Channel",
+        "description": "Utilice comunicaciones fuera de banda para validar la integridad de los datos provenientes del canal principal."
+      },
+      {
+        "id": "M0813",
+        "name": "Software Process and Device Authentication",
+        "description": "Los mecanismos de autenticación no deben enviar credenciales en texto plano y deben implementar medidas para prevenir ataques de repetición."
+      },
+      {
+        "id": "M0814",
+        "name": "Static Network Configuration",
+        "description": "Definir estáticamente las entradas ARP puede prevenir la manipulación y sniffing del tráfico conmutado."
+      }
+    ]
+  },
+  "T0807": {
+    "technique_name": "Command-Line Interface",
+    "mitigations": [
+      {
+        "id": "M0942",
+        "name": "Disable or Remove Feature or Program",
+        "description": "Considere eliminar o restringir funciones que no sean necesarias para la finalidad de un activo dentro del entorno de control."
+      },
+      {
+        "id": "M0938",
+        "name": "Execution Prevention",
+        "description": "La prevención de ejecución puede impedir que software malicioso acceda a recursos protegidos a través de la interfaz de línea de comandos."
+      }
+    ]
+  },
+  "T0819": {
+    "technique_name": "Exploit Public-Facing Application",
+    "mitigations": [
+      {
+        "id": "M0948",
+        "name": "Application Isolation and Sandboxing",
+        "description": "El aislamiento de aplicaciones limita los demás procesos y funciones del sistema a los que puede acceder un objetivo comprometido."
+      },
+      {
+        "id": "M0950",
+        "name": "Exploit Protection",
+        "description": "Se pueden usar cortafuegos de aplicaciones web para limitar la exposición de las aplicaciones y prevenir que el tráfico malicioso de explotación alcance la aplicación objetivo."
+      },
+      {
+        "id": "M0930",
+        "name": "Network Segmentation",
+        "description": "Segmente los servidores y servicios expuestos al público, separándolos del resto de la red mediante una DMZ o infraestructura de alojamiento separada."
+      },
+      {
+        "id": "M0926",
+        "name": "Privileged Account Management",
+        "description": "Aplique el principio de privilegio mínimo a las cuentas de servicio."
+      },
+      {
+        "id": "M0951",
+        "name": "Update Software",
+        "description": "Analice regularmente los sistemas expuestos a Internet en busca de vulnerabilidades y aplique parches rápidamente cuando se descubran vulnerabilidades críticas."
+      },
+      {
+        "id": "M0916",
+        "name": "Vulnerability Scanning",
+        "description": "Realice exploraciones periódicas de vulnerabilidades en los sistemas expuestos y establezca procedimientos para parchearlos rápidamente."
+      }
+    ]
+  },
+  "T0845": {
+    "technique_name": "Program Upload",
+    "mitigations": [
+      {
+        "id": "M0801",
+        "name": "Access Management",
+        "description": "Autentique todos los accesos a controladores de campo antes de autorizar cambios."
+      },
+      {
+        "id": "M0800",
+        "name": "Authorization Enforcement",
+        "description": "Todos los controladores de campo deben restringir la carga de programas solo a ciertos usuarios mediante control de acceso basado en roles."
+      },
+      {
+        "id": "M0802",
+        "name": "Communication Authenticity",
+        "description": "Los protocolos de administración de dispositivos deben autenticar todos los mensajes de la red para prevenir cambios no autorizados."
+      },
+      {
+        "id": "M0937",
+        "name": "Filter Network Traffic",
+        "description": "Filtre protocolos y cargas útiles asociadas con la carga de programas para prevenir accesos no autorizados."
+      },
+      {
+        "id": "M0804",
+        "name": "Human User Authentication",
+        "description": "Todos los controladores de campo deben requerir autenticación de usuarios en cualquier sesión de administración."
+      },
+      {
+        "id": "M0807",
+        "name": "Network Allowlists",
+        "description": "Use listas de control de acceso basadas en host para impedir conexiones de sistemas no autorizados."
+      },
+      {
+        "id": "M0930",
+        "name": "Network Segmentation",
+        "description": "Segmente la red operativa y los sistemas para restringir el acceso a funciones críticas únicamente a los sistemas de gestión designados."
+      },
+      {
+        "id": "M0813",
+        "name": "Software Process and Device Authentication",
+        "description": "Autentique las conexiones de software y dispositivos para impedir accesos no autorizados."
+      }
+    ]
+  },
+  "T0859": {
+    "technique_name": "Valid Accounts",
+    "mitigations": [
+      {
+        "id": "M0801",
+        "name": "Access Management",
+        "description": "Autentique todo acceso a controladores de campo antes de autorizar modificaciones."
+      },
+      {
+        "id": "M0936",
+        "name": "Account Use Policies",
+        "description": "Configure funciones de uso de cuentas, como bloqueo tras intentos fallidos, horarios de acceso y requisitos de contraseñas."
+      },
+      {
+        "id": "M0915",
+        "name": "Active Directory Configuration",
+        "description": "Considere la configuración de un servicio de autenticación a nivel de red disponible en los dispositivos ICS."
+      },
+      {
+        "id": "M0913",
+        "name": "Application Developer Guidance",
+        "description": "Asegúrese de que las aplicaciones y dispositivos no almacenen credenciales de forma insegura."
+      },
+      {
+        "id": "M0947",
+        "name": "Audit",
+        "description": "Audite regularmente el código fuente y configuraciones buscando almacenamiento inseguro de credenciales."
+      },
+      {
+        "id": "M0937",
+        "name": "Filter Network Traffic",
+        "description": "Use listas permitidas de IP junto con gestión de cuentas para restringir el acceso y mitigar el uso de credenciales robadas."
+      },
+      {
+        "id": "M0932",
+        "name": "Multi-factor Authentication",
+        "description": "Integre MFA para reducir el riesgo de uso de credenciales válidas robadas."
+      },
+      {
+        "id": "M0927",
+        "name": "Password Policies",
+        "description": "Las credenciales por defecto deben cambiarse inmediatamente tras la instalación y antes del despliegue en producción."
+      },
+      {
+        "id": "M0926",
+        "name": "Privileged Account Management",
+        "description": "Audite periódicamente las cuentas privilegiadas para limitar el uso a los niveles necesarios."
+      },
+      {
+        "id": "M0918",
+        "name": "User Account Management",
+        "description": "Asegure que usuarios y grupos tengan permisos adecuados según su rol mediante controles IAM."
+      }
+    ]
+  },
+  "T0812": {
+    "technique_name": "Default Credentials",
+    "mitigations": [
+      {
+        "id": "M0801",
+        "name": "Access Management",
+        "description": "Asegúrese de que los dispositivos estén protegidos mediante gestión de accesos, ya que a menudo tienen cuentas predeterminadas desconocidas."
+      },
+      {
+        "id": "M0927",
+        "name": "Password Policies",
+        "description": "Revise la documentación del proveedor para identificar credenciales predeterminadas potencialmente desconocidas."
+      }
+    ]
+  },
+  "T0821": {
+    "technique_name": "Modify Controller Tasking",
+    "mitigations": [
+      {
+        "id": "M0947",
+        "name": "Audit",
+        "description": "Proporcione la capacidad de verificar la integridad de las tareas del controlador utilizando funciones hash criptográficas."
+      },
+      {
+        "id": "M0800",
+        "name": "Authorization Enforcement",
+        "description": "Restrinja la modificación de tareas del controlador a usuarios autorizados mediante control de acceso basado en roles."
+      },
+      {
+        "id": "M0945",
+        "name": "Code Signing",
+        "description": "Utilice firmas de código para verificar la integridad y autenticidad de los programas instalados."
+      },
+      {
+        "id": "M0804",
+        "name": "Human User Authentication",
+        "description": "Requiera autenticación de usuarios en cualquier sesión de administración."
+      }
+    ]
+  },
+  "T0809": {
+    "technique_name": "Data Destruction",
+    "mitigations": [
+      {
+        "id": "M0953",
+        "name": "Data Backup",
+        "description": "Mantenga copias de seguridad remotas y almacenamiento redundante para registradores de eventos, así como plataformas de control de respaldo."
+      },
+      {
+        "id": "M0926",
+        "name": "Privileged Account Management",
+        "description": "Minimice los permisos y el acceso de las cuentas de servicio."
+      },
+      {
+        "id": "M0922",
+        "name": "Restrict File and Directory Permissions",
+        "description": "Proteja los archivos locales con permisos adecuados para reducir oportunidades de destrucción de datos."
+      }
+    ]
+  },
+  "T0826": {
+    "technique_name": "Loss of Availability",
+    "mitigations": [
+      {
+        "id": "M0953",
+        "name": "Data Backup",
+        "description": "Realice y almacene copias de seguridad separadas de los sistemas críticos."
+      },
+      {
+        "id": "M0810",
+        "name": "Out-of-Band Communications Channel",
+        "description": "Proporcione canales de comunicación redundantes fuera de banda usando sistemas y tecnologías diversas."
+      },
+      {
+        "id": "M0811",
+        "name": "Redundancy of Service",
+        "description": "Disponer de sistemas en espera (hot-standbys) en ubicaciones diversas asegura continuidad operacional."
+      }
+    ]
+  },
+  "T0828": {
+    "technique_name": "Loss of Productivity and Revenue",
+    "mitigations": [
+      {
+        "id": "M0953",
+        "name": "Data Backup",
+        "description": "Realice y almacene copias de seguridad reforzadas y separadas de la red corporativa para posibilitar la recuperación rápida."
+      }
+    ]
+  }
+}

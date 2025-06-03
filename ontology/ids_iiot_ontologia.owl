@@ -1,0 +1,1092 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://universidad.es/tfm/ids-iiot/ontologia#"
+     xml:base="http://universidad.es/tfm/ids-iiot/ontologia"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    
+    <owl:Ontology rdf:about="http://universidad.es/tfm/ids-iiot/ontologia">
+        <rdfs:label>Ontología IDS para IIoT</rdfs:label>
+        <rdfs:comment>Sistema de Detección de Intrusiones para Industrial IoT basado en MITRE ATT&amp;CK</rdfs:comment>
+        <owl:versionInfo>3.0</owl:versionInfo>
+    </owl:Ontology>
+    
+    <!-- ==================== CLASES PRINCIPALES ==================== -->
+    
+    <owl:Class rdf:about="#Ataque">
+        <rdfs:label>Ataque</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML (ddos_http, sql_injection, etc.)</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#Tecnica">
+        <rdfs:label>Tecnica</rdfs:label>
+        <rdfs:comment>Técnica de ataque según MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#Tactica">
+        <rdfs:label>Tactica</rdfs:label>
+        <rdfs:comment>Táctica de ataque según MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#Mitigacion">
+        <rdfs:label>Mitigacion</rdfs:label>
+        <rdfs:comment>Medida de mitigación según MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#AmenazaDetectada">
+        <rdfs:label>AmenazaDetectada</rdfs:label>
+        <rdfs:comment>Instancia específica de amenaza detectada por el sistema IDS</rdfs:comment>
+    </owl:Class>
+    
+    <!-- ==================== PROPIEDADES OBJETO ==================== -->
+    
+    <!-- Relaciones de AmenazaDetectada -->
+    <owl:ObjectProperty rdf:about="#esAtaque">
+        <rdfs:label>esAtaque</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="#Ataque"/>
+        <rdfs:comment>Amenaza detectada es de un tipo específico de ataque</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#utilizaTecnica">
+        <rdfs:label>utilizaTecnica</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="#Tecnica"/>
+        <rdfs:comment>Amenaza detectada utiliza técnica(s) específica(s) MITRE</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#utilizaTactica">
+        <rdfs:label>utilizaTactica</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="#Tactica"/>
+        <rdfs:comment>Amenaza detectada utiliza táctica(s) específica(s) MITRE</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#mitigacion_recomendada">
+        <rdfs:label>mitigacion_recomendada</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="#Mitigacion"/>
+        <rdfs:comment>Mitigación recomendada para la amenaza detectada</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- Relaciones estructurales -->
+    <owl:ObjectProperty rdf:about="#implementa_tecnica">
+        <rdfs:label>implementa_tecnica</rdfs:label>
+        <rdfs:domain rdf:resource="#Ataque"/>
+        <rdfs:range rdf:resource="#Tecnica"/>
+        <rdfs:comment>Tipo de ataque implementa técnica(s) MITRE específica(s)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#pertenece_a_tactica">
+        <rdfs:label>pertenece_a_tactica</rdfs:label>
+        <rdfs:domain rdf:resource="#Tecnica"/>
+        <rdfs:range rdf:resource="#Tactica"/>
+        <rdfs:comment>Técnica pertenece a una táctica específica</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="#mitigada_por">
+        <rdfs:label>mitigada_por</rdfs:label>
+        <rdfs:domain rdf:resource="#Tecnica"/>
+        <rdfs:range rdf:resource="#Mitigacion"/>
+        <rdfs:comment>Técnica de ataque se mitiga con estrategia específica</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- ==================== PROPIEDADES DATOS ==================== -->
+    
+    <owl:DatatypeProperty rdf:about="#tieneID">
+        <rdfs:label>tieneID</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Identificador único del elemento</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#tieneNombre">
+        <rdfs:label>tieneNombre</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Nombre descriptivo del elemento</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#tieneDescripcion">
+        <rdfs:label>tieneDescripcion</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Descripción detallada del elemento</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <!-- Propiedades específicas de AmenazaDetectada -->
+    <owl:DatatypeProperty rdf:about="#tieneConfianza">
+        <rdfs:label>tieneConfianza</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Nivel de confianza de la detección (0.0 - 1.0)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#detectadaEn">
+        <rdfs:label>detectadaEn</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Momento en que se realizó la detección</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="#indiceMuestra">
+        <rdfs:label>indiceMuestra</rdfs:label>
+        <rdfs:domain rdf:resource="#AmenazaDetectada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Índice de la muestra del dataset que generó la detección</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ==================== INDIVIDUOS TACTICAS ==================== -->
+
+    <owl:NamedIndividual rdf:about="#Collection">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection</tieneNombre>
+        <rdfs:label>Collection</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Discovery">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discovery</tieneNombre>
+        <rdfs:label>Discovery</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Execution">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execution</tieneNombre>
+        <rdfs:label>Execution</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Impact">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Impact</tieneNombre>
+        <rdfs:label>Impact</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Inhibit_Response_Function">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inhibit Response Function</tieneNombre>
+        <rdfs:label>Inhibit_Response_Function</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Initial_Access">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Initial Access</tieneNombre>
+        <rdfs:label>Initial_Access</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Lateral_Movement">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lateral Movement</tieneNombre>
+        <rdfs:label>Lateral_Movement</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Persistence">
+        <rdf:type rdf:resource="#Tactica"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Persistence</tieneNombre>
+        <rdfs:label>Persistence</rdfs:label>
+        <rdfs:comment>Táctica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- ==================== INDIVIDUOS TECNICAS ==================== -->
+
+    <owl:NamedIndividual rdf:about="#T0814">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0814</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denial of Service</tieneNombre>
+        <rdfs:label>T0814</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0815">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0815</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denial of Control</tieneNombre>
+        <rdfs:label>T0815</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0816">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0816</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denial of View</tieneNombre>
+        <rdfs:label>T0816</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0846">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0846</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Remote System Discovery</tieneNombre>
+        <rdfs:label>T0846</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0848</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rogue Master</tieneNombre>
+        <rdfs:label>T0848</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0830</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adversary-in-the-Middle</tieneNombre>
+        <rdfs:label>T0830</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0807">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0807</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Command-Line Interface</tieneNombre>
+        <rdfs:label>T0807</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0819</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploit Public-Facing Application</tieneNombre>
+        <rdfs:label>T0819</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0845</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Program Upload</tieneNombre>
+        <rdfs:label>T0845</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0859</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Valid Accounts</tieneNombre>
+        <rdfs:label>T0859</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0812">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0812</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Default Credentials</tieneNombre>
+        <rdfs:label>T0812</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0821">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0821</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modify Controller Tasking</tieneNombre>
+        <rdfs:label>T0821</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0809">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0809</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Destruction</tieneNombre>
+        <rdfs:label>T0809</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0826">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0826</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss of Availability</tieneNombre>
+        <rdfs:label>T0826</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0828">
+        <rdf:type rdf:resource="#Tecnica"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T0828</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss of Productivity and Revenue</tieneNombre>
+        <rdfs:label>T0828</rdfs:label>
+        <rdfs:comment>Técnica MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- ==================== INDIVIDUOS ATAQUES ==================== -->
+
+    <owl:NamedIndividual rdf:about="#ddos_http">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_http</tieneNombre>
+        <rdfs:label>ddos_http</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_icmp">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_icmp</tieneNombre>
+        <rdfs:label>ddos_icmp</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_tcp_syn">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_tcp_syn</tieneNombre>
+        <rdfs:label>ddos_tcp_syn</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_udp">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ddos_udp</tieneNombre>
+        <rdfs:label>ddos_udp</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#port_scan">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">port_scan</tieneNombre>
+        <rdfs:label>port_scan</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#vuln_scan">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vuln_scan</tieneNombre>
+        <rdfs:label>vuln_scan</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#os_fingerprint">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">os_fingerprint</tieneNombre>
+        <rdfs:label>os_fingerprint</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#mitm_arp_dns">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitm_arp_dns</tieneNombre>
+        <rdfs:label>mitm_arp_dns</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#sql_injection">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sql_injection</tieneNombre>
+        <rdfs:label>sql_injection</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#xss">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xss</tieneNombre>
+        <rdfs:label>xss</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#upload">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upload</tieneNombre>
+        <rdfs:label>upload</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#password">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">password</tieneNombre>
+        <rdfs:label>password</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#backdoor">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">backdoor</tieneNombre>
+        <rdfs:label>backdoor</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ransomware">
+        <rdf:type rdf:resource="#Ataque"/>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ransomware</tieneNombre>
+        <rdfs:label>ransomware</rdfs:label>
+        <rdfs:comment>Tipo de ataque detectado por el modelo ML</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- ==================== INDIVIDUOS MITIGACIONES ==================== -->
+
+    <owl:NamedIndividual rdf:about="#M0815">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0815</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Watchdog Timers</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se deben reiniciar el sistema y los procesos cuando ocurra una condición de tiempo de espera.</tieneDescripcion>
+        <rdfs:label>M0815</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0953">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0953</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Backup</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realice y almacene copias de seguridad de los datos de los sistemas de usuarios finales y de los servidores críticos. Asegúrese de que los sistemas de respaldo y almacenamiento estén reforzados y mantenidos separados de la red corporativa para prevenir compromisos. Mantenga y ejercite los planes de respuesta a incidentes, incluyendo la gestión de imágenes de respaldo maestras ("gold-copy") y configuraciones de sistemas clave para permitir una recuperación y respuesta rápidas ante actividades adversarias que afecten el control, la visibilidad o la disponibilidad.</tieneDescripcion>
+        <rdfs:label>M0953</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0810">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0810</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Out-of-Band Communications Channel</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proporcione a los operadores comunicaciones redundantes fuera de banda para respaldar la supervisión y el control de los procesos operativos, especialmente al recuperarse de una interrupción de la red. Las comunicaciones fuera de banda deben usar sistemas y tecnologías diversas para minimizar modos comunes de falla y vulnerabilidades en la infraestructura de comunicaciones.</tieneDescripcion>
+        <rdfs:label>M0810</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0811">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0811</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Redundancy of Service</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sistemas en espera (hot-standbys) en ubicaciones diversas pueden asegurar la continuidad de las operaciones si el sistema principal está comprometido o no disponible. En la capa de red, protocolos como Parallel Redundancy Protocol pueden usarse para utilizar simultáneamente comunicaciones redundantes y diversas en una red local.</tieneDescripcion>
+        <rdfs:label>M0811</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0814">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0814</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Static Network Configuration</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las redes ICS típicamente tienen dispositivos definidos de forma estática; por lo tanto, se debe minimizar el uso de protocolos de descubrimiento de TI (por ejemplo, DHCP, LLDP) y de funciones de descubrimiento en protocolos de automatización como OPC UA Device Discovery, BACnet y Ethernet/IP.</tieneDescripcion>
+        <rdfs:label>M0814</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0802">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0802</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communication Authenticity</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los protocolos usados para funciones de control deben proporcionar mecanismos de autenticidad (p. ej., mediante códigos MAC o firmas digitales). De lo contrario, utilice dispositivos intermedios o VPNs para reforzar la autenticidad de la comunicación entre dispositivos que no soportan dicha capacidad.</tieneDescripcion>
+        <rdfs:label>M0802</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0937">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0937</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Filter Network Traffic</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Implemente filtrado mediante listas de autorización en línea para los comandos de los protocolos de automatización, con el fin de evitar que los dispositivos envíen mensajes de comando o de reporte no autorizados.</tieneDescripcion>
+        <rdfs:label>M0937</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0807">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0807</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network Allowlists</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utilice listas de control de acceso (allowlists) en los hosts para impedir que los dispositivos acepten conexiones de sistemas no autorizados.</tieneDescripcion>
+        <rdfs:label>M0807</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0930">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0930</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network Segmentation</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Segmente los activos operativos y sus dispositivos de gestión según su rol funcional dentro del proceso para lograr un aislamiento más estricto de los sistemas de control y de la información operativa crítica.</tieneDescripcion>
+        <rdfs:label>M0930</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0813">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0813</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Software Process and Device Authentication</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los dispositivos deben autenticar todos los mensajes entre el equipo maestro y los dispositivos remotos (outstations).</tieneDescripcion>
+        <rdfs:label>M0813</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0947">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0947</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audit</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Limite el acceso a la infraestructura de red y a los recursos que puedan ser utilizados para reconfigurar el tráfico o generar condiciones de Adversary-in-the-Middle.</tieneDescripcion>
+        <rdfs:label>M0947</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0942">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0942</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disable or Remove Feature or Program</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deshabilite protocolos de red heredados innecesarios que pudieran ser empleados para ataques Adversary-in-the-Middle, si corresponde.</tieneDescripcion>
+        <rdfs:label>M0942</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0931">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0931</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Network Intrusion Prevention</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los sistemas de detección/prevención de intrusiones de red capaces de identificar patrones de tráfico indicativos de actividad Adversary-in-the-Middle pueden emplearse para mitigar dicha actividad.</tieneDescripcion>
+        <rdfs:label>M0931</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0938">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0938</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execution Prevention</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La prevención de ejecución puede impedir que software malicioso acceda a recursos protegidos a través de la interfaz de línea de comandos.</tieneDescripcion>
+        <rdfs:label>M0938</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0948">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0948</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application Isolation and Sandboxing</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El aislamiento de aplicaciones limita los demás procesos y funciones del sistema a los que puede acceder un objetivo comprometido.</tieneDescripcion>
+        <rdfs:label>M0948</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0950">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0950</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploit Protection</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se pueden usar cortafuegos de aplicaciones web para limitar la exposición de las aplicaciones y prevenir que el tráfico malicioso de explotación alcance la aplicación objetivo.</tieneDescripcion>
+        <rdfs:label>M0950</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0926">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0926</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Privileged Account Management</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aplique el principio de privilegio mínimo a las cuentas de servicio.</tieneDescripcion>
+        <rdfs:label>M0926</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0951">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0951</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Update Software</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analice regularmente los sistemas expuestos a Internet en busca de vulnerabilidades y aplique parches rápidamente cuando se descubran vulnerabilidades críticas.</tieneDescripcion>
+        <rdfs:label>M0951</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0916">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0916</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vulnerability Scanning</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realice exploraciones periódicas de vulnerabilidades en los sistemas expuestos y establezca procedimientos para parchearlos rápidamente.</tieneDescripcion>
+        <rdfs:label>M0916</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0801">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0801</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Access Management</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autentique todos los accesos a controladores de campo antes de autorizar cambios.</tieneDescripcion>
+        <rdfs:label>M0801</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0800">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0800</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Authorization Enforcement</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Todos los controladores de campo deben restringir la carga de programas solo a ciertos usuarios mediante control de acceso basado en roles.</tieneDescripcion>
+        <rdfs:label>M0800</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0804">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0804</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human User Authentication</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Todos los controladores de campo deben requerir autenticación de usuarios en cualquier sesión de administración.</tieneDescripcion>
+        <rdfs:label>M0804</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0936">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0936</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Account Use Policies</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configure funciones de uso de cuentas, como bloqueo tras intentos fallidos, horarios de acceso y requisitos de contraseñas.</tieneDescripcion>
+        <rdfs:label>M0936</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0915">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0915</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active Directory Configuration</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Considere la configuración de un servicio de autenticación a nivel de red disponible en los dispositivos ICS.</tieneDescripcion>
+        <rdfs:label>M0915</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0913">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0913</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application Developer Guidance</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asegúrese de que las aplicaciones y dispositivos no almacenen credenciales de forma insegura.</tieneDescripcion>
+        <rdfs:label>M0913</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0932">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0932</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multi-factor Authentication</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Integre MFA para reducir el riesgo de uso de credenciales válidas robadas.</tieneDescripcion>
+        <rdfs:label>M0932</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0927">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0927</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Password Policies</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las credenciales por defecto deben cambiarse inmediatamente tras la instalación y antes del despliegue en producción.</tieneDescripcion>
+        <rdfs:label>M0927</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0918">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0918</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User Account Management</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asegure que usuarios y grupos tengan permisos adecuados según su rol mediante controles IAM.</tieneDescripcion>
+        <rdfs:label>M0918</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0945">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0945</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Code Signing</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utilice firmas de código para verificar la integridad y autenticidad de los programas instalados.</tieneDescripcion>
+        <rdfs:label>M0945</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#M0922">
+        <rdf:type rdf:resource="#Mitigacion"/>
+        <tieneID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M0922</tieneID>
+        <tieneNombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restrict File and Directory Permissions</tieneNombre>
+        <tieneDescripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proteja los archivos locales con permisos adecuados para reducir oportunidades de destrucción de datos.</tieneDescripcion>
+        <rdfs:label>M0922</rdfs:label>
+        <rdfs:comment>Mitigación MITRE ATT&amp;CK for ICS</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- ==================== RELACIONES ESTRUCTURALES ==================== -->
+
+    <owl:NamedIndividual rdf:about="#T0814">
+        <pertenece_a_tactica rdf:resource="#Inhibit_Response_Function"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0815">
+        <pertenece_a_tactica rdf:resource="#Impact"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0816">
+        <pertenece_a_tactica rdf:resource="#Impact"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0846">
+        <pertenece_a_tactica rdf:resource="#Discovery"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <pertenece_a_tactica rdf:resource="#Discovery"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <pertenece_a_tactica rdf:resource="#Collection"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0807">
+        <pertenece_a_tactica rdf:resource="#Execution"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <pertenece_a_tactica rdf:resource="#Initial_Access"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <pertenece_a_tactica rdf:resource="#Collection"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <pertenece_a_tactica rdf:resource="#Persistence"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0812">
+        <pertenece_a_tactica rdf:resource="#Lateral_Movement"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0821">
+        <pertenece_a_tactica rdf:resource="#Execution"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0809">
+        <pertenece_a_tactica rdf:resource="#Inhibit_Response_Function"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0826">
+        <pertenece_a_tactica rdf:resource="#Impact"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0828">
+        <pertenece_a_tactica rdf:resource="#Impact"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_http">
+        <implementa_tecnica rdf:resource="#T0814"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_http">
+        <implementa_tecnica rdf:resource="#T0815"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_http">
+        <implementa_tecnica rdf:resource="#T0816"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_icmp">
+        <implementa_tecnica rdf:resource="#T0814"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_icmp">
+        <implementa_tecnica rdf:resource="#T0815"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_icmp">
+        <implementa_tecnica rdf:resource="#T0816"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_tcp_syn">
+        <implementa_tecnica rdf:resource="#T0814"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_tcp_syn">
+        <implementa_tecnica rdf:resource="#T0815"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_tcp_syn">
+        <implementa_tecnica rdf:resource="#T0816"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_udp">
+        <implementa_tecnica rdf:resource="#T0814"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_udp">
+        <implementa_tecnica rdf:resource="#T0815"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ddos_udp">
+        <implementa_tecnica rdf:resource="#T0816"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#port_scan">
+        <implementa_tecnica rdf:resource="#T0846"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#vuln_scan">
+        <implementa_tecnica rdf:resource="#T0846"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#os_fingerprint">
+        <implementa_tecnica rdf:resource="#T0848"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#mitm_arp_dns">
+        <implementa_tecnica rdf:resource="#T0830"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#sql_injection">
+        <implementa_tecnica rdf:resource="#T0807"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#xss">
+        <implementa_tecnica rdf:resource="#T0819"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#upload">
+        <implementa_tecnica rdf:resource="#T0845"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#password">
+        <implementa_tecnica rdf:resource="#T0859"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#password">
+        <implementa_tecnica rdf:resource="#T0812"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#backdoor">
+        <implementa_tecnica rdf:resource="#T0821"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ransomware">
+        <implementa_tecnica rdf:resource="#T0809"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ransomware">
+        <implementa_tecnica rdf:resource="#T0826"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ransomware">
+        <implementa_tecnica rdf:resource="#T0828"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0814">
+        <mitigada_por rdf:resource="#M0815"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0815">
+        <mitigada_por rdf:resource="#M0953"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0815">
+        <mitigada_por rdf:resource="#M0810"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0815">
+        <mitigada_por rdf:resource="#M0811"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0816">
+        <mitigada_por rdf:resource="#M0953"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0816">
+        <mitigada_por rdf:resource="#M0810"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0816">
+        <mitigada_por rdf:resource="#M0811"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0846">
+        <mitigada_por rdf:resource="#M0814"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <mitigada_por rdf:resource="#M0802"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <mitigada_por rdf:resource="#M0937"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <mitigada_por rdf:resource="#M0807"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <mitigada_por rdf:resource="#M0930"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0848">
+        <mitigada_por rdf:resource="#M0813"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0947"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0802"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0942"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0931"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0930"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0810"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0813"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0830">
+        <mitigada_por rdf:resource="#M0814"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0807">
+        <mitigada_por rdf:resource="#M0942"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0807">
+        <mitigada_por rdf:resource="#M0938"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <mitigada_por rdf:resource="#M0948"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <mitigada_por rdf:resource="#M0950"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <mitigada_por rdf:resource="#M0930"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <mitigada_por rdf:resource="#M0926"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <mitigada_por rdf:resource="#M0951"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0819">
+        <mitigada_por rdf:resource="#M0916"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0801"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0800"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0802"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0937"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0804"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0807"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0930"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0845">
+        <mitigada_por rdf:resource="#M0813"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0801"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0936"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0915"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0913"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0947"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0937"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0932"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0927"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0926"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0859">
+        <mitigada_por rdf:resource="#M0918"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0812">
+        <mitigada_por rdf:resource="#M0801"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0812">
+        <mitigada_por rdf:resource="#M0927"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0821">
+        <mitigada_por rdf:resource="#M0947"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0821">
+        <mitigada_por rdf:resource="#M0800"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0821">
+        <mitigada_por rdf:resource="#M0945"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0821">
+        <mitigada_por rdf:resource="#M0804"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0809">
+        <mitigada_por rdf:resource="#M0953"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0809">
+        <mitigada_por rdf:resource="#M0926"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0809">
+        <mitigada_por rdf:resource="#M0922"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0826">
+        <mitigada_por rdf:resource="#M0953"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0826">
+        <mitigada_por rdf:resource="#M0810"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0826">
+        <mitigada_por rdf:resource="#M0811"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#T0828">
+        <mitigada_por rdf:resource="#M0953"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
