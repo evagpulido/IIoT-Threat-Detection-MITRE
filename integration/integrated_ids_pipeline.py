@@ -24,24 +24,24 @@ class MLHandler:
         """
         Inicializa el manejador ML del sistema IDS.
         """
-        print("🔄 Cargando modelos ML...")
+        print(" Cargando modelos ML...")
         self.binary_model = self._load_model(binary_model_path, "Modelo Binario")
         self.multi_model = self._load_model(multi_model_path, "Modelo Multiclase")
         
-        print("🔄 Cargando datos de test...")
+        print(" Cargando datos de test...")
         self.test_data = self._load_test_data(train_test_data_path)
         
-        print("✅ Modelos ML cargados correctamente")
+        print(" Modelos ML cargados correctamente")
         
     def _load_model(self, model_path: str, model_name: str):
         """Carga un modelo desde archivo pickle."""
         try:
             with open(model_path, 'rb') as f:
                 model = pickle.load(f)
-            print(f"✅ {model_name} cargado: {type(model).__name__}")
+            print(f" {model_name} cargado: {type(model).__name__}")
             return model
         except Exception as e:
-            print(f"❌ Error cargando {model_name}: {e}")
+            print(f" Error cargando {model_name}: {e}")
             return None
     
     def _load_test_data(self, data_path: str) -> Dict:
@@ -50,14 +50,14 @@ class MLHandler:
             with open(data_path, 'rb') as f:
                 data = pickle.load(f)
             
-            print(f"✅ Datos cargados:")
+            print(f" Datos cargados:")
             for key in data.keys():
                 if hasattr(data[key], 'shape'):
                     print(f"  - {key}: {data[key].shape}")
             
             return data
         except Exception as e:
-            print(f"❌ Error cargando datos: {e}")
+            print(f" Error cargando datos: {e}")
             return {}
     
     def predict_sample(self, sample_index: int) -> Dict[str, Any]:
@@ -133,7 +133,7 @@ class IntegratedIDSPipeline:
     
     def __init__(self):
         """Inicializa el pipeline IDS integrado."""
-        print("🔄 Inicializando Pipeline IDS Integrado...")
+        print(" Inicializando Pipeline IDS Integrado...")
         
         # Manejador ML
         self.ml_handler = MLHandler()
@@ -144,7 +144,7 @@ class IntegratedIDSPipeline:
         # Creador de amenazas ontológicas
         self.amenaza_creator = AmenazaCreator()
         
-        print("✅ Pipeline IDS Integrado listo")
+        print(" Pipeline IDS Integrado listo")
     
     def process_sample_complete(self, sample_index: int) -> Dict[str, Any]:
         """
@@ -156,8 +156,8 @@ class IntegratedIDSPipeline:
         Returns:
             Diccionario con resultados completos del procesamiento
         """
-        print(f"\n🔄 Procesando muestra {sample_index} completa...")
-        
+        print(f"\n Procesando muestra {sample_index} completa...")
+    
         # 1. PREDICCIÓN ML
         ml_result = self.ml_handler.predict_sample(sample_index)
         
@@ -173,7 +173,7 @@ class IntegratedIDSPipeline:
             try:
                 mitre_techniques = self.mapper.map(final_label, final_confidence)
             except KeyError:
-                print(f"⚠️ Label '{final_label}' no encontrado en mapping MITRE")
+                print(f" Label '{final_label}' no encontrado en mapping MITRE")
         
         # 3. CREAR AMENAZA EN ONTOLOGÍA (si es ataque)
         amenaza_uri = None
@@ -185,12 +185,12 @@ class IntegratedIDSPipeline:
                     ml_result, sample_index
                 )
                 ontology_created = True
-                print(f"✅ Amenaza creada en ontología: {amenaza_uri}")
+                print(f" Amenaza creada en ontología: {amenaza_uri}")
             except Exception as e:
-                print(f"❌ Error creando amenaza: {e}")
+                print(f" Error creando amenaza: {e}")
                 ontology_created = False
         else:
-            print(f"⚪ Comportamiento normal - No se crea amenaza")
+            print(f" Comportamiento normal - No se crea amenaza")
         
         # 4. OBTENER INFORMACIÓN ONTOLÓGICA COMPLETA
         ontology_info = self._get_ontology_info(amenaza_uri, final_label)
@@ -318,7 +318,7 @@ class IntegratedIDSPipeline:
                         mitigations.append(mitigation_info)
                         
             except Exception as e:
-                print(f"⚠️ No se encontraron mitigaciones para esta amenaza: {e}")
+                print(f" No se encontraron mitigaciones para esta amenaza: {e}")
                 mitigations = []
             
             return {
@@ -330,7 +330,7 @@ class IntegratedIDSPipeline:
             }
             
         except Exception as e:
-            print(f"❌ Error consultando ontología: {e}")
+            print(f" Error consultando ontología: {e}")
             return {
                 'type': 'error',
                 'error': str(e),
@@ -398,16 +398,16 @@ class IntegratedIDSPipeline:
         # Generar índices aleatorios
         random_indices = random.sample(range(X_test_size), min(num_samples, X_test_size))
         
-        print(f"\n🎲 Procesando {len(random_indices)} muestras aleatorias del X_test...")
-        print(f"📊 Índices seleccionados: {random_indices}")
-        print(f"📁 Dataset size: {X_test_size} muestras")
+        print(f"\n Procesando {len(random_indices)} muestras aleatorias del X_test...")
+        print(f" Índices seleccionados: {random_indices}")
+        print(f" Dataset size: {X_test_size} muestras")
         
         results = []
         threats_created = 0
         normal_behavior = 0
         
         for i, sample_index in enumerate(random_indices):
-            print(f"\n🔄 Muestra {i+1}/{len(random_indices)} (índice {sample_index})...")
+            print(f"\n Muestra {i+1}/{len(random_indices)} (índice {sample_index})...")
             
             # FLUJO COMPLETO: X_test → ML → Ontología
             result = self.process_sample_complete(sample_index)
@@ -419,7 +419,7 @@ class IntegratedIDSPipeline:
             elif result.get('summary', {}).get('type') == 'normal_behavior':
                 normal_behavior += 1
         
-        print(f"\n📋 Resumen del procesamiento aleatorio:")
+        print(f"\n Resumen del procesamiento aleatorio:")
         print(f"  - Amenazas detectadas y creadas: {threats_created}")
         print(f"  - Comportamiento normal: {normal_behavior}")
         print(f"  - Total procesado: {len(results)}")
@@ -433,7 +433,7 @@ class IntegratedIDSPipeline:
             output_path = f"../ontology/ids_iiot_ontologia_with_threats_{timestamp}.owl"
         
         saved_path = self.amenaza_creator.save_updated_ontology(output_path)
-        print(f"💾 Ontología con amenazas guardada: {saved_path}")
+        print(f" Ontología con amenazas guardada: {saved_path}")
         return saved_path
 
 
@@ -442,7 +442,7 @@ def demo_pipeline():
     Demostración completa del pipeline IDS integrado.
     Procesa muestras individuales y aleatorias, y guarda la ontología resultante.
     """
-    print("🚀 Demostrando Pipeline IDS Integrado...")
+    print(" Demostrando Pipeline IDS Integrado...")
     
     try:
         # Inicializar pipeline
@@ -454,7 +454,7 @@ def demo_pipeline():
         
         #if "error" not in result:
         #    summary = result['summary']
-            # print(f"✅ Muestra procesada:")
+            # print(f" Muestra procesada:")
             # print(f"  - Tipo: {summary['type']}")
             # print(f"  - Ataque: {summary.get('attack_type', 'N/A')}")
             # print(f"  - Confianza: {summary['confidence']:.3f}")
@@ -472,14 +472,14 @@ def demo_pipeline():
         print("\n=== Demo 3: Guardar Ontología Poblada ===")
         saved_path = ids_pipeline.save_ontology_with_threats()
         
-        print(f"\n✅ Pipeline IDS Integrado funcionando correctamente!")
-        print(f"🎯 Sistema completo: Dataset → ML → MITRE → Ontología")
-        print(f"📁 Ontología poblada guardada en: {saved_path}")
+        print(f"\n Pipeline IDS Integrado funcionando correctamente!")
+        print(f" Sistema completo: Dataset → ML → MITRE → Ontología")
+        print(f" Ontología poblada guardada en: {saved_path}")
         
         return True
         
     except Exception as e:
-        print(f"❌ Error en pipeline: {e}")
+        print(f" Error en pipeline: {e}")
         return False
 
 
