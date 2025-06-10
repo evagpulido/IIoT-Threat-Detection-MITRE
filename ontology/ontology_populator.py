@@ -40,13 +40,13 @@ class OntologyPopulator:
         try:
             with open(mitigations_path, 'r', encoding='utf-8') as f:
                 mitigations = json.load(f)
-            print(f"✅ Mitigaciones MITRE cargadas: {len(mitigations)} técnicas")
+            print(f"Mitigaciones MITRE cargadas: {len(mitigations)} técnicas")
             return mitigations
         except FileNotFoundError:
-            print(f"❌ Archivo de mitigaciones no encontrado: {mitigations_path}")
+            print(f"Archivo de mitigaciones no encontrado: {mitigations_path}")
             return {}
         except Exception as e:
-            print(f"❌ Error cargando mitigaciones: {e}")
+            print(f"Error cargando mitigaciones: {e}")
             return {}
         
     def generate_complete_ontology(self) -> str:
@@ -364,7 +364,7 @@ class OntologyPopulator:
     
     def create_ontology_file(self):
         """Crea el archivo de ontología completo."""
-        print("🔄 Generando ontología con nomenclatura limpia...")
+        print("Generando ontología con nomenclatura limpia...")
         
         # Generar ontología completa
         complete_owl = self.generate_complete_ontology()
@@ -421,25 +421,3 @@ class OntologyPopulator:
             "total_relationships": total_relationships
         }
 
-
-def demo_ontology_populator():
-    """Demo del generador de ontología."""
-    try:
-        print("Generando ontología IDS-IIoT ...")
-        populator = OntologyPopulator("../mapping/mapping_dict.json")
-        
-        # Generar archivo único
-        ontology_file = populator.create_ontology_file()
-        
-        print(f"\n ¡Ontología lista!")
-        print(f"📁 Archivo: {ontology_file}")
-        
-        return True
-        
-    except Exception as e:
-        print(f"Error: {e}")
-        return False
-
-
-if __name__ == "__main__":
-    demo_ontology_populator()
