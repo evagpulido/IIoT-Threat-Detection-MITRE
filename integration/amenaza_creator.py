@@ -82,7 +82,7 @@ class AmenazaCreator:
         confidence = ml_prediction['final_confidence']
         
         if attack_label == "Normal":
-            print(f"⚪ Muestra {sample_index}: Comportamiento normal - No se crea amenaza")
+            print(f"Muestra {sample_index}: Comportamiento normal - No se crea amenaza")
             return None
         
         # 1. Crear el individuo AmenazaDetectada
@@ -191,7 +191,7 @@ class AmenazaCreator:
             output_path = self.ontology_path.replace('.owl', '_with_amenazas.owl')
         
         self.graph.serialize(destination=output_path, format="xml")
-        print(f"💾 Ontología actualizada guardada en: {output_path}")
+        print(f"Ontología actualizada guardada en: {output_path}")
         return output_path
     
     def get_amenazas_statistics(self) -> Dict[str, Any]:
@@ -225,62 +225,3 @@ class AmenazaCreator:
         return {'error': 'No se pudieron obtener estadísticas'}
 
 
-def demo_amenaza_creator():
-    """
-    Demo del creador de amenazas con nomenclatura limpia.
-    """
-    print("🚀 Probando Creador de Amenazas con nomenclatura limpia...")
-    
-    try:
-        creator = AmenazaCreator()
-        
-        # Demo 1: Crear amenaza de SQL Injection
-        print("\n=== Demo 1: Crear Amenaza SQL Injection ===")
-        ml_prediction = {
-            'final_label': 'sql_injection',
-            'final_confidence': 0.94
-        }
-        
-        amenaza_uri = creator.create_amenaza_detectada(ml_prediction, sample_index=0)
-        
-        if amenaza_uri:
-            print(f"Amenaza creada: {amenaza_uri}")
-        
-        # Demo 2: Crear amenaza de DDoS
-        print("\n=== Demo 2: Crear Amenaza DDoS ===")
-        ml_prediction2 = {
-            'final_label': 'ddos_tcp_syn',
-            'final_confidence': 0.87
-        }
-        
-        amenaza_uri2 = creator.create_amenaza_detectada(ml_prediction2, sample_index=1)
-        
-        # Demo 3: Comportamiento normal (no debe crear amenaza)
-        print("\n=== Demo 3: Comportamiento Normal ===")
-        ml_prediction3 = {
-            'final_label': 'Normal',
-            'final_confidence': 0.92
-        }
-        
-        amenaza_uri3 = creator.create_amenaza_detectada(ml_prediction3, sample_index=2)
-        
-        # Demo 4: Guardar ontología actualizada
-        print("\n=== Demo 4: Guardar Ontología ===")
-        output_path = creator.save_updated_ontology()
-        print(f"💾 Nueva ontología con amenazas: {output_path}")
-        
-        print("\n✅ Creador de Amenazas funcionando correctamente!")
-        print("🎯 Nomenclatura limpia: sin espacios, sin paréntesis, sin acentos")
-        print("🔗 Propiedades actualizadas:")
-        print("  - esAtaque, utilizaTecnica, utilizaTactica")
-        print("  - mitigacion_recomendada, implementa_tecnica")
-        print("  - pertenece_a_tactica, mitigada_por")
-        return True
-        
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return False
-
-
-if __name__ == "__main__":
-    demo_amenaza_creator()
