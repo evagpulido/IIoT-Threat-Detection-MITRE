@@ -7,9 +7,7 @@ import uuid
 
 class EnhancedAttackMapper:
     """
-    Extiende funcionalidad de mapeo para integración con ontología.
-    Mantiene compatibilidad original y añade capacidades ontológicas.
-    Nombres MITRE originales + clases ontológicas en castellano sin espacios.
+    etiqueta ml --> tecnicas MITRE --> Indiciduos onologicos
     """
     
     def __init__(self, dict_path: Union[str, Path]):
@@ -44,7 +42,7 @@ class EnhancedAttackMapper:
     
     def map(self, label: str, confidence: float) -> List[Dict[str, Any]]:
         """
-        Funcionalidad original: mapea label del modelo a técnicas ATT&CK.
+        Funcionalidad: mapea label del modelo a técnicas ATT&CK.
         CASO ESPECIAL: "Normal" devuelve lista vacía (sin técnicas).
         
         Args:
@@ -82,7 +80,7 @@ class EnhancedAttackMapper:
         Args:
             label: Etiqueta del modelo ML
             confidence: Confianza de la predicción
-            detection_timestamp: Momento de la detección (opcional)
+            detection_timestamp: Momento de la detección 
             
         Returns:
             Lista de individuos ontológicos estructurados (vacía si es Normal)
@@ -250,22 +248,22 @@ def demo_enhanced_mapper():
             normal_result = mapper.map("Normal", 0.92)
             print(f"Comportamiento normal - Técnicas detectadas: {len(normal_result)}")
             if len(normal_result) == 0:
-                print("✅ Correcto: Normal no mapea a técnicas de ataque")
+                print("Correcto: Normal no mapea a técnicas de ataque")
             else:
-                print("❌ Error: Normal no debería mapear a técnicas")
+                print("Error: Normal no debería mapear a técnicas")
                 
             # Demo ontológico para Normal
             normal_ontology = mapper.map_to_ontology_individuals("Normal", 0.92)
             print(f"Individuos ontológicos para Normal:")
             if normal_ontology[0]['tipo'] == 'comportamiento_normal':
-                print(f"  ✅ Tipo: {normal_ontology[0]['tipo']}")
-                print(f"  ✅ Mensaje: {normal_ontology[0]['mensaje']}")
+                print(f" Tipo: {normal_ontology[0]['tipo']}")
+                print(f" Mensaje: {normal_ontology[0]['mensaje']}")
             else:
-                print("❌ Error: Normal genera AmenazaDetectada incorrectamente")
+                print("Error: Normal genera AmenazaDetectada incorrectamente")
                 
         except KeyError:
-            print("❌ 'Normal' no encontrado en mapping_dict.json")
-            print("💡 Añade: '\"Normal\": [],' al inicio de tu mapping_dict.json")
+            print("'Normal' no encontrado en mapping_dict.json")
+            print(" Añade: '\"Normal\": [],' al inicio de tu mapping_dict.json")
         
         # Demo mapeo ontológico
         print("\n=== Demo Mapeo Ontológico (AmenazaDetectada) ===")
@@ -304,12 +302,12 @@ def demo_enhanced_mapper():
         print(f"Idioma ontología: {structure['metadata']['ontology_language']}")
         print(f"Nomenclatura: {structure['metadata']['nomenclature']}")
         
-        print("\n✅ Enhanced Mapper funcionando correctamente!")
-        print("📋 Nomenclatura limpia: MITRE original + Ontología sin espacios/acentos")
+        print("\nEnhanced Mapper funcionando correctamente!")
+        print("Nomenclatura limpia: MITRE original + Ontología sin espacios/acentos")
         return True
         
     except Exception as e:
-        print(f"❌ Error en Enhanced Mapper: {e}")
+        print(f"Error en Enhanced Mapper: {e}")
         return False
 
 
