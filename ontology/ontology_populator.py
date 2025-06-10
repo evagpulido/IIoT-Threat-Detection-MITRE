@@ -11,7 +11,7 @@ import json
 
 class OntologyPopulator:
     """
-    Genera ontología OWL con estructura correcta:
+    Genera ontología OWL con 5 clases:
     Ataque, Tecnica, Tactica, Mitigacion, AmenazaDetectada
     """
     
@@ -200,7 +200,7 @@ class OntologyPopulator:
         # Añadir individuos de técnicas
         owl_content += self._generate_techniques_individuals()
         
-        # Añadir individuos de ataques (antes etiquetas)
+        # Añadir individuos de ataques 
         owl_content += self._generate_attacks_individuals()
         
         # Añadir individuos de mitigaciones
@@ -248,7 +248,7 @@ class OntologyPopulator:
         return content
     
     def _generate_attacks_individuals(self) -> str:
-        """Genera individuos de tipos de ataque (antes etiquetas)."""
+        """Genera individuos de tipos de ataque."""
         labels = list(self.mapper.lookup.keys())
         content = "\n    <!-- ==================== INDIVIDUOS ATAQUES ==================== -->\n"
         
@@ -350,7 +350,7 @@ class OntologyPopulator:
         return content
     
     def _clean_name(self, name: str) -> str:
-        """Limpia nombres para IDs válidos - SIN espacios, SIN paréntesis, SIN acentos."""
+        """Limpia nombres para IDs válidos - sin espacios, sin paréntesis, sin acentos."""
         cleaned = name.replace(' ', '_').replace('-', '_').replace('/', '_')
         cleaned = cleaned.replace('(', '_').replace(')', '_').replace('&', 'and')
         cleaned = cleaned.replace('á', 'a').replace('é', 'e').replace('í', 'i')
@@ -377,22 +377,22 @@ class OntologyPopulator:
         stats = self.mapper.export_ontology_structure()
         mitigation_stats = self._get_mitigation_stats()
         
-        print(f"✅ Ontología creada: {ontology_path}")
-        print(f"\n📊 Estadísticas:")
+        print(f"Ontología creada: {ontology_path}")
+        print(f"\n Estadísticas:")
         print(f"  - Técnicas: {stats['metadata']['total_techniques']}")
         print(f"  - Tácticas: {stats['metadata']['total_tactics']}")
         print(f"  - Ataques: {stats['metadata']['total_labels'] - 1}")  # -1 por "Normal"
         print(f"  - Mitigaciones únicas: {mitigation_stats['unique_mitigations']}")
         print(f"  - Relaciones técnica-mitigación: {mitigation_stats['total_relationships']}")
         
-        print(f"\n🎯 ESTRUCTURA ONTOLÓGICA LIMPIA:")
-        print(f"  - ✅ Ataque")
-        print(f"  - ✅ Tecnica (sin espacios)") 
-        print(f"  - ✅ Tactica (sin espacios)")
-        print(f"  - ✅ Mitigacion (sin acentos)")
-        print(f"  - ✅ AmenazaDetectada")
+        print(f"\n ESTRUCTURA ONTOLÓGICA LIMPIA:")
+        print(f"  - Ataque")
+        print(f"  - Tecnica (sin espacios)") 
+        print(f"  - Tactica (sin espacios)")
+        print(f"  - Mitigacion (sin acentos)")
+        print(f"  - AmenazaDetectada")
         
-        print(f"\n🔗 PROPIEDADES SIN ESPACIOS:")
+        print(f"\nPROPIEDADES :")
         print(f"  - esAtaque: AmenazaDetectada → Ataque")
         print(f"  - utilizaTecnica: AmenazaDetectada → Tecnica")
         print(f"  - utilizaTactica: AmenazaDetectada → Tactica") 
@@ -423,23 +423,21 @@ class OntologyPopulator:
 
 
 def demo_ontology_populator():
-    """Demo del generador de ontología con nomenclatura limpia."""
+    """Demo del generador de ontología."""
     try:
-        print("🚀 Generando ontología IDS-IIoT con nomenclatura limpia...")
+        print("Generando ontología IDS-IIoT ...")
         populator = OntologyPopulator("../mapping/mapping_dict.json")
         
         # Generar archivo único
         ontology_file = populator.create_ontology_file()
         
-        print(f"\n✅ ¡Ontología con nomenclatura limpia lista!")
+        print(f"\n ¡Ontología lista!")
         print(f"📁 Archivo: {ontology_file}")
-        print(f"🔧 Sin espacios, sin paréntesis, sin acentos")
-        print(f"🎯 Compatible con todas las herramientas ontológicas")
         
         return True
         
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"Error: {e}")
         return False
 
 
