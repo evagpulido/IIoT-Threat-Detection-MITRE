@@ -7,7 +7,7 @@ import uuid
 
 class EnhancedAttackMapper:
     """
-    etiqueta ml --> tecnicas MITRE --> Indiciduos onologicos
+    etiqueta ml --> tecnicas MITRE 
     """
     
     def __init__(self, dict_path: Union[str, Path]):
@@ -155,88 +155,3 @@ class EnhancedAttackMapper:
         }
 
 
-def demo_enhanced_mapper():
-    """
-    Demo del EnhancedAttackMapper con nomenclatura limpia.
-    """
-    try:
-        mapper = EnhancedAttackMapper("mapping_dict.json")
-        
-        # Demo mapeo original
-        print("=== Demo Mapeo Original ===")
-        result = mapper.map("ddos_http", 0.95)
-        print(f"DDoS HTTP detectado con confianza 0.95:")
-        for tech in result:
-            print(f"  - {tech['idTecnica']}: {tech['nombreTecnica']} (Táctica: {tech['tactica']})")
-        
-        # Demo comportamiento normal
-        print("\n=== Demo Comportamiento Normal ===")
-        try:
-            normal_result = mapper.map("Normal", 0.92)
-            print(f"Comportamiento normal - Técnicas detectadas: {len(normal_result)}")
-            if len(normal_result) == 0:
-                print("Correcto: Normal no mapea a técnicas de ataque")
-            else:
-                print("Error: Normal no debería mapear a técnicas")
-                
-            # Demo ontológico para Normal
-            normal_ontology = mapper.map_to_ontology_individuals("Normal", 0.92)
-            print(f"Individuos ontológicos para Normal:")
-            if normal_ontology[0]['tipo'] == 'comportamiento_normal':
-                print(f" Tipo: {normal_ontology[0]['tipo']}")
-                print(f" Mensaje: {normal_ontology[0]['mensaje']}")
-            else:
-                print("Error: Normal genera AmenazaDetectada incorrectamente")
-                
-        except KeyError:
-            print("'Normal' no encontrado en mapping_dict.json")
-            print(" Añade: '\"Normal\": [],' al inicio de tu mapping_dict.json")
-        
-        # Demo mapeo ontológico
-        print("\n=== Demo Mapeo Ontológico (AmenazaDetectada) ===")
-        ontology_result = mapper.map_to_ontology_individuals("port_scan", 0.87)
-        print(f"Port scan detectado - Individual ontológico:")
-        print(f"  ID Amenaza: {ontology_result[0]['amenaza_id']}")
-        print(f"  Técnica MITRE: {ontology_result[0]['tecnica']['name']}")
-        print(f"  Táctica MITRE: {ontology_result[0]['tecnica']['tactic']}")
-        print(f"  ID técnica limpio: {ontology_result[0]['tecnica']['individual_id']}")
-        
-        # Demo función _clean_name
-        print("\n=== Demo Función _clean_name ===")
-        test_names = [
-            "Remote System Discovery",
-            "Data Destruction (T0809)",
-            "Adversary-in-the-Middle",
-            "Técnica con acentós"
-        ]
-        
-        for name in test_names:
-            clean = mapper._clean_name(name)
-            print(f"  '{name}' → '{clean}'")
-        
-        # Demo tácticas MITRE originales
-        print("\n=== Demo Tácticas MITRE Originales ===")
-        tactics = mapper.get_unique_tactics()
-        print(f"Tácticas MITRE (originales): {tactics}")
-        
-        # Demo estructura ontológica
-        print("\n=== Demo Estructura Ontológica ===")
-        structure = mapper.export_ontology_structure()
-        print(f"Técnicas únicas: {structure['metadata']['total_techniques']}")
-        print(f"Tácticas únicas: {structure['metadata']['total_tactics']}")
-        print(f"Labels del modelo: {structure['metadata']['total_labels']}")
-        print(f"Nombres MITRE: {structure['metadata']['mitre_names']}")
-        print(f"Idioma ontología: {structure['metadata']['ontology_language']}")
-        print(f"Nomenclatura: {structure['metadata']['nomenclature']}")
-        
-        print("\nEnhanced Mapper funcionando correctamente!")
-        print("Nomenclatura limpia: MITRE original + Ontología sin espacios/acentos")
-        return True
-        
-    except Exception as e:
-        print(f"Error en Enhanced Mapper: {e}")
-        return False
-
-
-if __name__ == "__main__":
-    demo_enhanced_mapper()
