@@ -47,9 +47,9 @@ class AmenazaCreator:
         """Carga la ontología base."""
         try:
             self.graph.parse(self.ontology_path, format="xml")
-            print(f"✅ Ontología base cargada: {len(self.graph)} triples")
+            print(f"Ontología base cargada: {len(self.graph)} triples")
         except Exception as e:
-            print(f"❌ Error cargando ontología: {e}")
+            print(f"Error cargando ontología: {e}")
             raise
     
     def create_amenaza_detectada(self, 
@@ -102,7 +102,7 @@ class AmenazaCreator:
         for technique in techniques:
             self._connect_to_technique(amenaza_uri, technique)
         
-        print(f"✅ Creada {amenaza_id}: {attack_label} (conf: {confidence:.3f})")
+        print(f"Creada {amenaza_id}: {attack_label} (conf: {confidence:.3f})")
         return amenaza_uri
     
     def _connect_to_attack_type(self, amenaza_uri: URIRef, attack_label: str) -> URIRef:
