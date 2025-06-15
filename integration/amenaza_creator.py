@@ -11,7 +11,7 @@ class AmenazaCreator:
     Conecta detecciones ML con técnicas, tácticas y mitigaciones.
     """
     
-    def __init__(self, ontology_path: str = "../ontology/ids_iiot_ontologia.owl"):
+    def __init__(self, ontology_path: str = "./ontology/ids_iiot_ontologia.owl"):
         """
         Inicializa el creador de amenazas.
         

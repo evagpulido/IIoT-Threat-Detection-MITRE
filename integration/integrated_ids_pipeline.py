@@ -1,6 +1,8 @@
 import sys
 import os
-sys.path.append('../mapping')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+sys.path.append(os.path.join(project_root, 'mapping'))
 
 from enhanced_mapper import EnhancedAttackMapper
 from amenaza_creator import AmenazaCreator
@@ -18,9 +20,9 @@ class MLHandler:
     """
     
     def __init__(self, 
-                 binary_model_path: str = "../../IDS/models/modelo_RandomForest.pkl",
-                 multi_model_path: str = "../../IDS/models/modelo_RandomForest_multi.pkl", 
-                 train_test_data_path: str = "../../IDS/data/train_test_data.pkl"):
+                 binary_model_path: str = "./models/modelo_RandomForest.pkl",
+                 multi_model_path: str = "./models/modelo_RandomForest_multi.pkl", 
+                 train_test_data_path: str = "./data/train_test_data.pkl"):
         """
         Inicializa el manejador ML del sistema IDS.
         """
@@ -139,7 +141,7 @@ class IntegratedIDSPipeline:
         self.ml_handler = MLHandler()
         
         # Mapper para ML → MITRE
-        self.mapper = EnhancedAttackMapper("../mapping/mapping_dict.json")
+        self.mapper = EnhancedAttackMapper("./mapping/mapping_dict.json")
         
         # Creador de amenazas ontológicas
         self.amenaza_creator = AmenazaCreator()
@@ -430,14 +432,14 @@ class IntegratedIDSPipeline:
         """Guarda la ontología actualizada con las amenazas creadas."""
         if output_path is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"../ontology/ids_iiot_ontologia_with_threats_{timestamp}.owl"
+            output_path = f"./ontology/ids_iiot_ontologia_with_threats_{timestamp}.owl"
         
         saved_path = self.amenaza_creator.save_updated_ontology(output_path)
         print(f" Ontología con amenazas guardada: {saved_path}")
         return saved_path
 
 
-def demo_pipeline():
+def main():
     """
     Demostración completa del pipeline IDS integrado.
     Procesa muestras individuales y aleatorias, y guarda la ontología resultante.
@@ -484,4 +486,4 @@ def demo_pipeline():
 
 
 if __name__ == "__main__":
-    demo_pipeline()
+    main()
