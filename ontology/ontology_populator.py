@@ -1,6 +1,8 @@
 import sys
 import os
-sys.path.append('../mapping')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+sys.path.append(os.path.join(project_root, 'mapping'))
 
 from enhanced_mapper import EnhancedAttackMapper
 from pathlib import Path
@@ -420,4 +422,25 @@ class OntologyPopulator:
             "unique_mitigations": len(unique_mitigations),
             "total_relationships": total_relationships
         }
+
+def main():
+    """Función principal para ejecutar el poblador de ontología."""
+    # Rutas corregidas para ejecutar desde la raíz del proyecto
+    mapping_dict_path = "./mapping/mapping_dict.json"
+    mitigations_dict_path = "./integration/mitigations_dict.json"
+    output_dir = "./ontology"
+    
+    # Crear el poblador
+    populator = OntologyPopulator(
+        mapping_dict_path=mapping_dict_path,
+        mitigations_dict_path=mitigations_dict_path,
+        output_dir=output_dir
+    )
+    
+    # Crear la ontología
+    ontology_path = populator.create_ontology_file()
+    print(f"\n¡Ontología creada exitosamente en: {ontology_path}")
+
+if __name__ == "__main__":
+    main()
 
