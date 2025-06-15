@@ -11,37 +11,38 @@ Este proyecto presenta un sistema de detección de intrusiones (IDS) diseñado p
 - Integración ontológica para representación del conocimiento de seguridad
 - Propuesta automatizada de mitigaciones basadas en TTPs detectadas
 
-**Dependencias Python:**
+## Dependencias Python:
 pip install pandas numpy scikit-learn matplotlib owlready2 imbalanced-learn jupyter
 
 ## Instalacion
-# Clonar el repositorio
+### Clonar el repositorio
 git clone [URL-del-repositorio]
 cd IIoT-Threat-Detection-MITRE
 
-Demostración Rápida
+## Demostración Rápida
 Para ejecutar el sistema con modelos pre-entrenados:
-bash# Crear ontología base
+### Crear ontología base
 python3 ontology/ontology_populator.py
-
-# Ejecutar pipeline completo
+### Ejecutar pipeline completo
 python3 integration/integrated_ids_pipeline.py
-Ejecución Completa
+
+## Ejecución Completa
 Para procesar datos desde capturas de tráfico:
-bash# 1. Procesar capturas con Zeek
+
+### 1. Procesar capturas con Zeek
 python3 Zeek-Pipeline/scripts/01_procesar_pcap_con_zeek.py
 
-# 2. Crear dataset
+### 2. Crear dataset
 jupyter notebook notebooks/creacion_dataset_NG-IIoTset.ipynb
 
-# 3. Preprocesar datos
+### 3. Preprocesar datos
 jupyter notebook notebooks/preprocess_NG-IIoTset.ipynb
 
-# 4. Entrenar modelos
+### 4. Entrenar modelos
 jupyter notebook notebooks/entrenamiento.ipynb
 
-# 5. Crear ontología base
+### 5. Crear ontología base
 python3 ontology/ontology_populator.py
 
-# 6. Ejecutar pipeline integrado
+### 6. Ejecutar pipeline integrado
 python3 integration/integrated_ids_pipeline.py
